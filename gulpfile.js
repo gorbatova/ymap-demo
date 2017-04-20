@@ -30,8 +30,8 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
-		'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
-		'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
+		'app/libs/jquery/dist/jquery.min.js' // ,  Берем jQuery
+		// 'app/libs/magnific-popup/dist/jquery.magnific-popup.min.js' // Берем Magnific Popup
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
 		.pipe(uglify()) // Сжимаем JS файл
@@ -39,7 +39,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('css-libs', ['sass'], function() {
-	return gulp.src('app/css/libs.css') // Выбираем файл для минификации
+	return gulp.src('app/css/normalize.css') // Выбираем файл для минификации
 		.pipe(cssnano()) // Сжимаем
 		.pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
 		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
