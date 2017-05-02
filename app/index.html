@@ -5,12 +5,30 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/normalize.min.css">
 	<link rel="stylesheet" href="css/main.css">
-	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-	<script src="js/map.js"></script>
+	<link rel="stylesheet" href="http://med-market24.ru/assets/template/css/style.css">
+	<link rel="stylesheet" href="http://med-market24.ru/assets/template/css/valya.css">
+	
 </head>
 <body>
-	<div class="container">
-		<div id="map" style="width: 600px; height: 400px"></div>
+<div class="container">
+	<div class="row">
+	    <div class="geoMap_wrapper_general">
+	        <div id="map_wrap" class="">
+	            <div class="col-sm-4">
+	                <div id="map_menu_wrap" class="geoMap_menu_wrapper"></div>
+	            </div>
+	            <div class="col-sm-8">
+	                <div class="geoMap_wrapper">
+	                    <div id="map" class=""></div>
+	                </div>
+	            </div>
+	        </div>  
+	    </div>
 	</div>
+</div>
+	
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="js/map.js"></script>
 </body>
 </html>
