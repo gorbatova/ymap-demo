@@ -9,36 +9,46 @@ $(document).ready(function () {
                     center: [59.985407999990976, 30.265212661376932],
                     ytype: "Магазин на базе",
                     name: "ЦМРТ Старая Деревня",
-                    content:"ст. м. Старая Деревня, ул. Дибуновская, д. 45",
-                    time: "пн-вс 9:00 - 21:00"
+                    metro: "Старая Деревня",
+                    content:"ул. Дибуновская, д. 45",
+                    time: "пн-вс 9:00 - 21:00",
+                    deliv: "1-2 дня",
                 },
                 {
                     center: [59.96364718347366, 30.31981381880189],
                     ytype: "Магазин на базе",
                     name: "ЦМРТ Петроградский",
-                    content:"ст. м. Петроградская, ул. Рентгена, д. 5",
-                    time: "пн-вс 9:00 - 21:00"
+                    metro: "Петроградская",
+                    content:"ул. Рентгена, д. 5",
+                    time: "пн-вс 9:00 - 21:00",
+                    deliv: "1-2 дня",
                 },
                 {
                     center: [59.90159567390066,30.284458119049045],
                     ytype: "Магазин на базе",
                     name: "ЦМРТ Нарвский",
-                    content:"ст. м. Нарвская, ул. Ивана Черных, д. 29",
-                    time: "пн-вс 9:00 - 21:00"
+                    metro: "Нарвская",
+                    content:"ул. Ивана Черных, д. 29",
+                    time: "пн-вс 9:00 - 21:00",
+                    deliv: "1-2 дня",
                 },
                 {
                     center: [60.041910132816035,30.315507271163906],
                     ytype: "Магазин на базе",
                     name: "ЦМРТ Озерки ",
-                    content:"ст. м. Озерки, Выборгское шоссе, д. 40",
-                    time: "пн-вс 9:00 - 21:00"
+                    metro: "Озерки",
+                    content:"Выборгское шоссе, д. 40",
+                    time: "пн-вс 9:00 - 21:00",
+                    deliv: "1-2 дня",
                 },
                 {
                     center: [59.94800881931565,30.35778281481931],
                     ytype: "Магазин на базе",
                     name: "ЦМРТ Чернышевская",
-                    content:"ст. м. Чернышевская, ул. Захарьевская, д. 14",
-                    time: "Ежедневно 9:00 - 22:00"
+                    metro: "Чернышевская",
+                    content:"ул. Захарьевская, д. 14",
+                    time: "Ежедневно 9:00 - 22:00",
+                    deliv: "1-2 дня",
                 }
             ]}
     ];
@@ -100,9 +110,16 @@ $(document).ready(function () {
         function createSubMenu (item, collection, submenu) {
 
             // Пункт подменю.
-            var submenuItem = $('<li class="geoMap_submenu_item" ><a href="#" id="bt_'+i+'"><span class="geoMap_submenu_name">' + item.name + '</span><span class="geoMap_submenu_content">' + item.content + '</span><span class="geoMap_submenu_time"><span>' + item.time + '</span></span></a></li>'),
+            var submenuItem = $('<li class="geoMap_submenu_item" ><a href="#" id="bt_'+i+'"><span class="geoMap_submenu_name">' + item.name + '</span><span class="geoMap_submenu_content">' + 'ст. м. ' + item.metro +  ', ' + item.content + '</span><span class="geoMap_submenu_time"><span>' + item.time + '</span></span></a></li>'),
             // Создаем метку.
-                placemark = new ymaps.Placemark(item.center, { balloonContent: '<div class="ymap_content">' + '<div class="ymap_header">' + item.ytype + ' ' + item.name + '</div>' + '<br>' + item.content + '<br>' + item.time + '</div>' });
+                placemark = new ymaps.Placemark(item.center, { balloonContent:
+                 '<div class="ymap_content">' + 
+                    '<div class="ymap_header">' + item.ytype + ' ' + item.name + '</div>' + 
+                    '<div class="ymap_adr">' + 'Адрес: ' + '<b>' + item.content + '</b></div>' + 
+                    '<div class="ymap_metro">' + 'Метро: ' + '<b>' + item.metro + '</b></div>' +
+                    '<div class="ymap_deliv">' + 'Срок доставки: ' + '<b>' + item.deliv + '</b></div>' +
+                    '<div class="ymap_rejim">' + 'Режим работы: ' + '<b>' + item.time + '</b></div>' +
+                '</div>' });
 
             // Добавляем метку в коллекцию.
             collection.add(placemark);

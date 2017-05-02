@@ -6,3 +6,12 @@ body {
 
 .container {
   margin-top: 20vh; }
+
+.ymap_content > div {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 5px 0;
+  font-size: 13px;
+  margin-bottom: 5px; }
+
+.ymap_header {
+  font-weight: 600; }
