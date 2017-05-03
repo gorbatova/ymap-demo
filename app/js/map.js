@@ -13,6 +13,7 @@ $(document).ready(function () {
                     content:"ул. Дибуновская, д. 45",
                     time: "пн-вс 9:00 - 21:00",
                     deliv: "1-2 дня",
+                    price: "доставка бесплатная"
                 },
                 {
                     center: [59.96364718347366, 30.31981381880189],
@@ -22,6 +23,7 @@ $(document).ready(function () {
                     content:"ул. Рентгена, д. 5",
                     time: "пн-вс 9:00 - 21:00",
                     deliv: "1-2 дня",
+                    price: "доставка бесплатная"
                 },
                 {
                     center: [59.90159567390066,30.284458119049045],
@@ -31,6 +33,7 @@ $(document).ready(function () {
                     content:"ул. Ивана Черных, д. 29",
                     time: "пн-вс 9:00 - 21:00",
                     deliv: "1-2 дня",
+                    price: "доставка бесплатная"
                 },
                 {
                     center: [60.041910132816035,30.315507271163906],
@@ -40,6 +43,7 @@ $(document).ready(function () {
                     content:"Выборгское шоссе, д. 40",
                     time: "пн-вс 9:00 - 21:00",
                     deliv: "1-2 дня",
+                    price: "доставка бесплатная"
                 },
                 {
                     center: [59.94800881931565,30.35778281481931],
@@ -49,6 +53,7 @@ $(document).ready(function () {
                     content:"ул. Захарьевская, д. 14",
                     time: "Ежедневно 9:00 - 22:00",
                     deliv: "1-2 дня",
+                    price: "доставка бесплатная"
                 }
             ]}
     ];
@@ -119,6 +124,7 @@ $(document).ready(function () {
                     '<div class="ymap_metro">' + 'Метро: ' + '<b>' + item.metro + '</b></div>' +
                     '<div class="ymap_deliv">' + 'Срок доставки: ' + '<b>' + item.deliv + '</b></div>' +
                     '<div class="ymap_rejim">' + 'Режим работы: ' + '<b>' + item.time + '</b></div>' +
+                    '<div class="ymap_price">' + 'Цена: ' + '<b>' + item.price + '</b></div>' +
                 '</div>' });
 
             // Добавляем метку в коллекцию.
